@@ -6,6 +6,7 @@
       <p class="card-text">{{ event.description }}</p>
       <p>Start : {{event.start_at}}</p>
       <p>End : {{event.end_at}}</p>
+      <p>Createur : {{ ownerName }} </p>
       <div class="members" v-for="(member, index) in members" :key="index">
         <member-card :member="member"></member-card>
       </div>
@@ -28,7 +29,8 @@ export default {
       eventId: null,
       event: {},
       members: [],
-      showDeleteButton: false
+      showDeleteButton: false,
+      ownerName: ""
     };
   },
   mounted() {
@@ -38,6 +40,7 @@ export default {
           this.event = event;
           this.members = event.members;
           this.showDeleteButton = event.owner_id === accountService.getId();
+          this.ownerName = `${event.owner.firstname} ${event.owner.lastname}`
         })
         .catch(err => {
           console.log(err);
