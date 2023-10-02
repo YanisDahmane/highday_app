@@ -3,6 +3,10 @@ let login = (credentials) => {
   return Axios.post('/auth/login', credentials)
 }
 
+let register = (credentials) => {
+  return Axios.post('/auth/register', credentials)
+}
+
 let logout = () => {
   localStorage.removeItem('token')
 }
@@ -22,6 +26,7 @@ let isLogged = () => {
 
 export const accountService = {
   login,
+  register,
   logout,
   saveToken,
   getToken,
