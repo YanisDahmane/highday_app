@@ -11,8 +11,13 @@ let logout = () => {
   localStorage.removeItem('token')
 }
 
-let saveToken = (token) => {
+let saveToken = (token, id) => {
   localStorage.setItem('token', token)
+  localStorage.setItem('id', id)
+}
+
+let getId = () => {
+  return parseInt(localStorage.getItem('id'), 10)
 }
 
 let getToken = () => {
@@ -30,5 +35,6 @@ export const accountService = {
   logout,
   saveToken,
   getToken,
+  getId,
   isLogged
 }

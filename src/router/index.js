@@ -29,7 +29,8 @@ const routes = [
     children: [
       { path: "dashboard", component: App.Dashboard },
       { path: "events/new", component: App.EventNew },
-      { path: "events/:id/edit", component: App.EventEdit }
+      { path: "events/:id/edit", component: App.EventEdit },
+      { path: "events/:id", component: App.EventShow },
       ]
   },
   {

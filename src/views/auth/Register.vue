@@ -45,7 +45,7 @@ export default {
     register() {
       accountService.register(this.user)
           .then(response => {
-            accountService.saveToken(response.data.token)
+            accountService.saveToken(response.data.token, response.data.id)
             this.$router.push('/app/dashboard')
           })
           .catch(error => console.log(error))

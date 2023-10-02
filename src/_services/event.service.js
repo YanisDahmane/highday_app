@@ -8,11 +8,21 @@ let getAll = (date = null) => {
   }
 }
 
+let get = (id) => {
+  return Axios.get(`/events/${id}`).then(res => res.data)
+}
+
 let create = (event) => {
   return Axios.post('/events', event).then(res => res.data)
 }
 
+let destroy = (id) => {
+  return Axios.delete(`/events/${id}`).then(res => res.data)
+}
+
 export const eventService = {
   getAll,
+  get,
+  destroy,
   create
 }
