@@ -1,5 +1,4 @@
 <template>
-  <h1>Liste des évènements</h1>
   <div class="all-events">
     <div class="card" v-for="(event, index) in events" :key="index">
       <event-card :event="event"></event-card>
