@@ -1,7 +1,6 @@
 <template>
   <nav>
     <router-link to="/app/dashboard">Dashboard</router-link>
-    <router-link to="/app/events/new">New Event</router-link>
     <button @click="logout()">Logout</button>
   </nav>
 </template>

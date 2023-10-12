@@ -1,12 +1,12 @@
 <template>
   <div class="select-date">
-    <div id="previus-day" @click="setPreviousDay">
+    <div id="previus-day" class="selector" @click="setPreviousDay">
       {{ this.previousDay.getDate() }}
     </div>
     <div id="current-day">
       {{ this.actualDay.getDate() }}
     </div>
-    <div id="next-day" @click="setNextDay">
+    <div id="next-day" class="selector" @click="setNextDay">
       {{ this.nextDay.getDate() }}
     </div>
   </div>
@@ -52,22 +52,31 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 50px;
-    background-color: #f5f5f5;
+    height: 80px;
     border-radius: 5px;
-    padding: 0 10px;
     margin-bottom: 20px;
   }
-  .select-date div {
+  .select-date .selector {
+    background-color: #42b983;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 22vw;
     height: 100%;
+    border-radius: 16px;
+  }
+
+  .select-date #current-day {
+    border: 5px solid #aee7cd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22vw;
+    height: 100%;
+    border-radius: 16px;
   }
   .select-date div:hover {
     cursor: pointer;
-    background-color: #e0e0e0;
   }
 
 </style>
